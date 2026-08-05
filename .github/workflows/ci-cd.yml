@@ -1,0 +1,38 @@
+name: SIGE Shared Boilerplate CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descargar el código fuente del repositorio
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      # 2. Configurar el entorno de ejecución con Java 21 (Temurin)
+      - name: Configurar JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: "temurin"
+          cache: "maven" # Cachea las dependencias para que el pipeline corra ultra rápido
+
+      # 3. Darle permisos de ejecución al wrapper de Maven
+      - name: Dar permisos de ejecución a mvnw
+        run: chmod +x mvnw
+
+      # 4. Compilar el proyecto y ejecutar pruebas unitarias
+      - name: Compilar y Probar con Maven
+        run: ./mvnw clean verify
+
+      # 5. Notificar si algo sale mal (Ejecutar solo si los pasos anteriores fallan)
+      - name: Report Pipeline Failure
+        if: failure()
+        run: |
+          echo "::error title=Pipeline Failed::The build or tests failed in the develop branch. Please check the logs above."

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Nombre de la aplicación desde application.yml -->
+    <springProperty scope="context" name="APP_NAME" source="spring.application.name" defaultValue="sige-backend-core"/>
+    
+    <!-- =================================================================== -->
+    <!-- ENTORNO: DESARROLLO (dev)                                           -->
+    <!-- Consola coloreada con formato legible y Correlation-ID              -->
+    <!-- =================================================================== -->
+    <springProfile name="dev">
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{36}) [X-Correlation-Id: %X{correlationId:-N/A}] - %msg%n</pattern>
+            </encoder>
+        </appender>
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+    <!-- =================================================================== -->
+    <!-- ENTORNO: PRODUCCIÓN (prod)                                          -->
+    <!-- Output en JSON estructurado para Loki / Promtail / ELK               -->
+    <!-- =================================================================== -->
+    <springProfile name="prod">
+        <appender name="JSON_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+                <customFields>{"app_name":"${APP_NAME}"}</customFields>
+                <includeMdcKeyName>correlationId</includeMdcKeyName>
+            </encoder>
+        </appender>
+        <root level="INFO">
+            <appender-ref ref="JSON_CONSOLE"/>
+        </root>
+    </springProfile>
+
+</configuration>
