@@ -12,7 +12,7 @@ spring:
       write_dates_as_timestamps: false
 
 server:
-  port: ${PORT:8080}
+  port: ${PORT:8082}
   servlet:
     context-path: /api/v1
 

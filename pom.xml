@@ -11,10 +11,10 @@
     </parent>
 
     <groupId>mx.edu.unsis.sige</groupId>
-    <artifactId>sige-shared-boilerplate</artifactId>
+    <artifactId>sige-people-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sige-shared-boilerplate</name>
-    <description>Shared Boilerplate for SIGE-UNSIS</description>
+    <name>sige-people-service</name>
+    <description>SIGE UNSIS Personnel and Socioeconomic Microservice</description>
 
     <properties>
         <java.version>21</java.version>
