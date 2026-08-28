@@ -31,6 +31,9 @@ public class Person {
     @Builder.Default
     private List<PersonContact> contacts = new ArrayList<>();
 
+    @Builder.Default
+    private List<PersonAddress> addresses = new ArrayList<>();
+
     private OffsetDateTime createdAt;
     private UUID createdBy;
     private OffsetDateTime updatedAt;

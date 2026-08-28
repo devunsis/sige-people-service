@@ -16,21 +16,20 @@ import java.util.UUID;
 @Builder
 public class PersonAddress {
     private UUID id;
-    private UUID personId;
-    private UUID addressTypeId;
-    
     private String street;
     private String exteriorNumber;
     private String interiorNumber;
     private String neighborhood;
     private String postalCode;
-    private String locality;
-    private String municipality;
-    private String state;
-    private String country;
-    
-    private Boolean isPrimary;
-    
+    private String localityId;
+    private String municipalityId;
+    private String districtId;
+    private String regionId;
+    private String stateId;
+    private String countryId;
+    private Double latitude;
+    private Double longitude;
+    private String addressStatus;
     private OffsetDateTime createdAt;
     private UUID createdBy;
     private OffsetDateTime updatedAt;
