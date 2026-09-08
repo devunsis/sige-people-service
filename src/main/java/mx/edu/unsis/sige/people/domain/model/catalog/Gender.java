@@ -10,7 +10,7 @@ import java.util.UUID;
 
 /**
  * Modelo de dominio puro del catálogo de géneros
- * (MALE, FEMALE, NON_BINARY, UNDISCLOSED, ...). Sin anotaciones de framework.
+ * (MALE, FEMALE, NON_BINARY, ...). Sin anotaciones de framework.
  */
 @Getter
 @Setter

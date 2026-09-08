@@ -16,7 +16,7 @@ import java.time.OffsetDateTime;
 import java.util.UUID;
 
 /**
- * Catálogo de tipos de contacto de una persona (EMAIL, MOBILE, PHONE, ...).
+ * Catálogo de tipos de contacto de una persona (EMAIL, PHONE, ...).
  * Referenciado de forma lógica por {@code person_contacts.contact_type_id}.
  */
 @Entity

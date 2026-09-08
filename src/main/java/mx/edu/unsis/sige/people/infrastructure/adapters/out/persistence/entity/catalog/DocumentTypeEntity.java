@@ -17,7 +17,7 @@ import java.util.UUID;
 
 /**
  * Catálogo de tipos de documento de identidad de una persona
- * (CURP, RFC, INE, PASSPORT, BIRTH_CERTIFICATE, ...).
+ * (CURP, INE, ...).
  */
 @Entity
 @Table(name = "document_types", schema = "sige_people")

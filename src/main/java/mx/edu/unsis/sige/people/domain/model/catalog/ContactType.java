@@ -10,7 +10,7 @@ import java.util.UUID;
 
 /**
  * Modelo de dominio puro del catálogo de tipos de contacto
- * (EMAIL, MOBILE, PHONE, ...). Sin anotaciones de framework.
+ * (EMAIL, PHONE, ...). Sin anotaciones de framework.
  */
 @Getter
 @Setter

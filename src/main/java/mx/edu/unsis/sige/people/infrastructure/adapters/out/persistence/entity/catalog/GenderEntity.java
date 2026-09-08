@@ -16,7 +16,7 @@ import java.time.OffsetDateTime;
 import java.util.UUID;
 
 /**
- * Catálogo de géneros de una persona (MALE, FEMALE, NON_BINARY, UNDISCLOSED, ...).
+ * Catálogo de géneros de una persona (MALE, FEMALE, NON_BINARY).
  */
 @Entity
 @Table(name = "genders", schema = "sige_people")

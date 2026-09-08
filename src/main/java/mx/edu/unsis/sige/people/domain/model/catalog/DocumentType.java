@@ -10,7 +10,7 @@ import java.util.UUID;
 
 /**
  * Modelo de dominio puro del catálogo de tipos de documento de identidad
- * (CURP, RFC, INE, PASSPORT, ...). Sin anotaciones de framework.
+ * (CURP,INE, ...). Sin anotaciones de framework.
  */
 @Getter
 @Setter
