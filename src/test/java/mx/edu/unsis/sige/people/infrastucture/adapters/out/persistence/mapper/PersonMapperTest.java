@@ -8,8 +8,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 class PersonMapperTest {
 
     @Test
@@ -63,6 +61,6 @@ class PersonMapperTest {
 
         // Act & Assert (Ajusta la llamada según tu mapper)
         // PersonAddressEntity entity = personPersistenceMapper.toEntity(domain);
-        // assertThat(entity.getMunicipalityId()).isEqualTo("MUN-01"); 
+        // assertThat(entity.getMunicipalityId()).isEqualTo("MUN-01");
     }
 }
